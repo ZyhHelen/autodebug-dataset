@@ -5,14 +5,13 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/ZyhHelen/autodebug-dataset/src/case002-syntax-error-keyerror/models"
+	"github.com/ZyhHelen/autodebug-dataset/src/errcase/declare_and_not_used/models"
 )
 
 // Ping handler
 func Ping(c *gin.Context) {
-	var default = "pong"
 	c.JSON(http.StatusOK, gin.H{
-		"message": default,
+		"message": "pong",
 	})
 }
 

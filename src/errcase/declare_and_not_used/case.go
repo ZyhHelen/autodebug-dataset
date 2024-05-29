@@ -1,12 +1,12 @@
-package main
+package declare_and_not_used
 
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/ZyhHelen/autodebug-dataset/src/case001-declare-and-not-used/handlers"
+	"github.com/ZyhHelen/autodebug-dataset/src/errcase/declare_and_not_used/handlers"
 )
 
-func main() {
+func Run() {
 	r := gin.Default()
 
 	var name string

@@ -1,12 +1,12 @@
-package main
+package syntax_error_keyerror
 
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/ZyhHelen/autodebug-dataset/src/case002-syntax-error-keyerror/handlers"
+	"github.com/ZyhHelen/autodebug-dataset/src/errcase/syntax_error_keyerror/handlers"
 )
 
-func main() {
+func Run() {
 	r := gin.Default()
 
 	// 定义路由
