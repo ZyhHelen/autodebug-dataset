@@ -5,7 +5,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 
-	"github.com/ZyhHelen/autodebug-dataset/src/errcase/declare_and_not_used/models"
+	"github.com/ZyhHelen/autodebug-dataset/src/errcase/syntax_error_type_convert/models"
 )
 
 // Ping handler
@@ -33,7 +33,8 @@ func Submit(c *gin.Context) {
 func GetUser(c *gin.Context) {
 	name := c.Param("name")
 	// 模拟从数据库获取用户信息
-	user := models.User{Name: name, Email: name + "@example.com"}
+	age := 18
+	user := models.User{Name: name, Email: name + "@example.com", Age: age}
 
 	c.JSON(http.StatusOK, gin.H{
 		"user": user,

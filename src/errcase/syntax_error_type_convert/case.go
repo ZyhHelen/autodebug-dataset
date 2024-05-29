@@ -1,15 +1,13 @@
-package declare_and_not_used
+package syntax_error_type_convert
 
 import (
 	"github.com/gin-gonic/gin"
 
-	"github.com/ZyhHelen/autodebug-dataset/src/errcase/declare_and_not_used/handlers"
+	"github.com/ZyhHelen/autodebug-dataset/src/errcase/syntax_error_type_convert/handlers"
 )
 
 func Run() {
 	r := gin.Default()
-
-	var name string
 
 	// 定义路由
 	r.GET("/ping", handlers.Ping)

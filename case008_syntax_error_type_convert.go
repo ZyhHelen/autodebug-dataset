@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/ZyhHelen/autodebug-dataset/src/errcase/assignment_to_entry_in_nil_channel"
+	"github.com/ZyhHelen/autodebug-dataset/src/errcase/syntax_error_type_convert"
 )
 
 func main() {
-	assignment_to_entry_in_nil_channel.Run()
+	syntax_error_type_convert.Run()
 }
