@@ -6,7 +6,14 @@ import (
 	"github.com/gin-gonic/gin"
 
 	"github.com/ZyhHelen/autodebug-dataset/models"
+	"github.com/ZyhHelen/autodebug-dataset/utils"
 )
+
+func Info(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"info": utils.GetInfoMap(),
+	})
+}
 
 // Ping handler
 func Ping(c *gin.Context) {
