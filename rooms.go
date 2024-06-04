@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+
 	"github.com/dustin/go-broadcast"
 )
 
@@ -98,6 +100,18 @@ func (m *Manager) DeleteBroadcast(roomid string) {
 }
 
 func (m *Manager) Submit(userid, roomid, text string) {
+	if userid == "" {
+		log.Printf("Empty UserID")
+		return
+	}
+	if roomid == "" {
+		log.Printf("Empty RoomID")
+		return
+	}
+	if text == "" {
+		log.Printf("Empty Text")
+		return
+	}
 	msg := &Message{
 		UserId: userid,
 		RoomId: roomid,
