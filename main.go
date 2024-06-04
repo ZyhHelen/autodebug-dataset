@@ -54,6 +54,31 @@ func roomPOST(c *gin.Context) {
 	roomid := c.Param("roomid")
 	userid := c.PostForm("user")
 	message := c.PostForm("message")
+
+	if roomid == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "error",
+			"message": "empty room id",
+		})
+		return
+	}
+
+	if userid == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "error",
+			"message": "empty user id",
+		})
+		return
+	}
+
+	if message == "" {
+		c.JSON(http.StatusBadRequest, gin.H{
+			"status":  "error",
+			"message": "empty message",
+		})
+		return
+	}
+
 	roomManager.Submit(userid, roomid)
 
 	c.JSON(http.StatusOK, gin.H{
