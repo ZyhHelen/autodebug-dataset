@@ -15,9 +15,6 @@ import (
 func Info(c echo.Context) error {
 	log.Printf("[INFO] <Info> receive request from: %s ", c.RealIP())
 
-	// get info
-	// 注意：下面的channel使用是不正确的，因为你在创建后立即关闭了它
-	// 这部分在Echo版本中不需要，我们直接调用utils.GetInfoMap()
 	infoMap := utils.GetInfoMap()
 
 	// format info
