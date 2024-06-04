@@ -6,7 +6,7 @@ func GetInfoMap() map[string]any {
 
 	infoMap["name"] = "Gin Framework"
 	infoMap["version"] = "1.0.0"
-	infoMap["author"] = "zyhHelen"
+	infoMap["author"] = "zhangsan"
 
 	return infoMap
 }
