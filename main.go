@@ -4,29 +4,34 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/gin-gonic/gin"
-
 	"github.com/ZyhHelen/autodebug-dataset/handlers"
+	"github.com/labstack/echo/v4"
 )
 
 func main() {
-	r := gin.Default()
+	e := echo.New() // 创建一个新的Echo实例
 	port := 8080
 
 	log.Print("server start ..")
 
 	// 定义路由
-	r.GET("/info", handlers.Info)
-	r.GET("/ping", handlers.Ping)
-	r.GET("/user/:name", handlers.GetUser)
+	e.GET("/info", handlers.Info)
+	e.GET("/ping", handlers.Ping)
+	e.GET("/user/:name", handlers.GetUser)
 
-	domain := "http://localhost:8080"
+	// 注意：POST路由应该这样定义
+	e.POST("/submit", handlers.Submit)
+
+	domain := "http://localhost:" + fmt.Sprintf("%d", port)
 	log.Print()
 	log.Printf("GET /info        --> %s/info\n", domain)
 	log.Printf("GET /ping        --> %s/ping\n", domain)
 	log.Printf("GET /user/:name  --> %s/user/:name\n", domain)
+	log.Printf("POST /submit     --> %s/submit\n", domain) // 添加Submit路由
 	log.Print()
 
 	// 运行服务器
-	r.Run(fmt.Sprintf(":%d", port))
+	if err := e.Start(fmt.Sprintf(":%d", port)); err != nil {
+		log.Fatalf("failed to start server: %v", err)
+	}
 }
