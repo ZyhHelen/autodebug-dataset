@@ -20,7 +20,7 @@ func Info(c *gin.Context) {
 	// format info
 	infoMsg := ""
 	for k, v := range infoMap {
-		infoMsg += fmt.Sprintf("%v\t\t:%v\n", k, v)
+		infoMsg += fmt.Sprintf("%v\t:%v\n", k, v)
 	}
 
 	// return json response
